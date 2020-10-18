@@ -1,11 +1,12 @@
-%_________________________________
-%_______Author: Paula Gra?a_______
-%____________04/2018______________
-%_________________________________
+%_________________________________________________________
+%_______Author: Paula Graca_______________________________
+%____________04/2018______________________________________
+%_______Digital Signal Processing_________________________
+%_________________________________________________________
 
 clc
 clear
-N=512;
+N = 512;
 
 % aproximate frequency interval
 lowfreq = [650 733 811 897 1000]; 
@@ -33,7 +34,7 @@ ylabel('Magnitude')
 % 12 column matrix of the signal (stable part of the signal segments)
 x = [signal(950:1450), signal(2100:2600), signal(3150:3650), signal(4200:4700), signal(5250:5750), signal(6350:6850), signal(7400:7900), signal(8500:9000), signal(9600:10100), signal(10600:11100), signal(11750:12250), signal(12800:13300)];
 
-fprintf('The telephone number is: ')
+fprintf('The telephone number is:  ')
 % 12 digit identification
 for k = 1:12
     X = fft(x(:,k),N);
@@ -83,6 +84,7 @@ for k = 1:12
     end
 end
 
+% Plot FFT
 figure(2)
 plot(f,d)
 title('Example of FFT (last tone)')
